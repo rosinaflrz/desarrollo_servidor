@@ -1,0 +1,29 @@
+{
+  "name": "tarea2",
+  "version": "1.0.0",
+  "description": "Proyecto de autenticación con Node.js, Express, TypeScript y MongoDB",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "tsc && node dist/server.js",
+    "dev": "nodemon"
+  },
+  "author": "Rosina",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^6.9.0",
+    "mongoose": "^6.0.12"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/mongoose": "^5.11.97",
+    "nodemon": "^3.1.7",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.2"
+  }
+}
