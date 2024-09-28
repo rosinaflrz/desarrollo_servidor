@@ -58,3 +58,62 @@ Este proyecto es una API de autenticación que permite registrar usuarios, inici
     "password": "123456",
     "role": "user"
   }
+### Login de usuarios
+- **Ruta: /login
+- **Método: POST
+- **Descripción: Inicia sesión y devuelve un token JWT si las credenciales son correctas.
+- **Cuerpo de la solicitud (JSON):
+  ```json
+  {
+  "email": "john.doe@example.com",
+  "password": "123456"
+  }
+  
+- **Respuesta JSON
+  ```json
+  {
+  "message": "Login exitoso",
+  "token": "your_jwt_token_here"
+  }
+
+### Ruta protegida
+- ** Ruta `/protected`
+- **Método: `GET`
+- **Descripción: Acceso solo para usuarios autenticados mediante JWT.
+- **Encabezado requerido (Authorization):
+`Authorization: Bearer <tu_token_jwt>`
+
+### Estructura del proyecto
+`
+.
+├── src
+│   ├── config          # Configuración (conexión a la base de datos)
+│   ├── controllers     # Controladores (lógica de registro y login)
+│   ├── middlewares     # Middlewares (autenticación JWT)
+│   ├── models          # Modelos de Mongoose
+│   ├── routes          # Definición de rutas
+│   ├── services        # Servicios de negocio
+│   ├── types           # Tipos y definiciones para TypeScript
+│   ├── app.ts          # Inicialización de la app
+│   └── server.ts       # Servidor principal
+├── .env                # Variables de entorno
+├── package.json        # Dependencias y scripts del proyecto
+├── tsconfig.json       # Configuración de TypeScript
+└── README.md           # Este archivo 
+`
+### Dependencias principales
+- ** Express: Framework de Node.js para crear servidores web.
+- ** Mongoose: ORM para manejar MongoDB.
+- ** TypeScript: Superconjunto de JavaScript que añade tipado estático.
+- ** JWT (jsonwebtoken): Librería para generar y verificar tokens JWT.
+- ** bcrypt: Para el hash y verificación de contraseñas.
+
+### Scripts disponibles
+- ** `npm run dev: Ejecuta el proyecto en modo de desarrollo usando nodemon y ts-node.`
+- ** `npm start`: Inicia el proyecto en modo producción
+
+### Instrucciones de despliegue
+Para desplegar esta API en producción, asegúrate de:
+- ** Configurar las variables de entorno en el servidor de producción
+- ** Usar el comando `npmn start` para iniciar el servidor en modo producción
+
